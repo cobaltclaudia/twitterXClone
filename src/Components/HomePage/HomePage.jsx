@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
+import Navigation from '../Navigation/Navigation'
 
 const HomePage = () => {
   return (
