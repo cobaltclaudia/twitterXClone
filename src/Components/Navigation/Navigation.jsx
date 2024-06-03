@@ -1,7 +1,10 @@
+import { Button } from '@mui/base';
 import React from 'react'
+import { useNavigate } from 'react-router'
 import { navigationMenu } from './NavigationMenu'
 
 const Navigation = () => {
+    const navigate=useNavigate();
   return (
     <div className='h-screen sticky top-0'>
         <div>
@@ -12,10 +15,20 @@ const Navigation = () => {
             </div>
             <div className='space-y-6'>
 
-                {navigationMenu.map((item)=> <div className='cursor-pointer flex space-x-3 items-center'>
+                {navigationMenu.map((item)=> <div className='cursor-pointer flex space-x-3 items-center' 
+                onClick={(item.title === "Profile"?navigate(`/profile/${5}`)
+                :navigate(item.path))}>
                     {item.icon}
                     <p className='text-x1'>{item.title}</p>
                 </div>)}
+
+            </div>
+            <div className='py-10'>
+                <Button 
+                sx={{width:"100%",borderRadius:"29px",py:"15px",bgcolor:'#1e88e5'}}
+                variant ='contained'>
+                    Tweet
+                </Button>
 
             </div>
         </div>
